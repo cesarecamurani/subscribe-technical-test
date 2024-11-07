@@ -2,6 +2,16 @@
 
 This project is a Sales Taxes Calculator that reads items from a file, calculates the applicable taxes, and prints a receipt with the total price and sales taxes.
 
+### Ruby Version
+```
+3.3.5
+```
+
+### RSpec Version
+```
+3.13.0
+```
+
 ## Table of Contents
 
 - [Installation](#installation)
