@@ -1,19 +1,22 @@
+require "bigdecimal"
+require "bigdecimal/util"
+
 class TaxesCalculator
   BASIC_SALES_TAX_RATE = 0.10.freeze
   IMPORT_DUTY_TAX_RATE = 0.05.freeze
 
   IMPORTED_KEY = "imported".freeze
-  EXEMPT_ITEMS = %w[book chocolate pill].freeze
+  EXEMPT_ITEMS = %w[book chocolate pill oil tea].freeze
 
   class << self
     def calculate_taxes(item_name, price)
-      tax_rate = 0
+      tax_rate = BigDecimal("0")
 
       tax_rate += IMPORT_DUTY_TAX_RATE if imported_item?(item_name)
 
       tax_rate += BASIC_SALES_TAX_RATE unless exempt_item?(item_name)
 
-      round_to_nearest_0_05(price * tax_rate)
+      round_to_nearest_0_05(price.to_d * tax_rate)
     end
 
     private
