@@ -2,6 +2,15 @@
 
 This project is a Sales Taxes Calculator that reads items from a file, calculates the applicable taxes, and prints a receipt with the total price and sales taxes.
 
+### Tax Application Rules
+
+- The Sales Taxes Calculator applies two types of taxes: basic sales tax and import duty. 
+- Basic sales tax is applied at a rate of 10% on all goods, except for books, food, and medical products, which are exempt. 
+- Import duty is an additional tax of 5% on all imported goods, with no exemptions. 
+- The total tax for an item is the sum of the basic sales tax and import duty, if applicable. 
+- Taxes are rounded up to the nearest 0.05 for each item. 
+- The receipt lists the name of each item, its price including tax, the total sales taxes, and the total cost of all items.
+
 ### Ruby Version
 ```
 3.3.5
