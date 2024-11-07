@@ -3,7 +3,7 @@ class TaxesCalculator
   IMPORT_DUTY_TAX_RATE = 0.05.freeze
 
   IMPORTED = "imported".freeze
-  EXEMPTED_ITEMS = %w[book chocolate pill].freeze
+  EXEMPT_ITEMS = %w[book chocolate pill].freeze
 
   class << self
     def calculate_taxes(item_name, price)
@@ -23,7 +23,7 @@ class TaxesCalculator
     end
 
     def exempted_good?(item_name)
-      EXEMPTED_ITEMS.any? do |exempted_item|
+      EXEMPT_ITEMS.any? do |exempted_item|
         item_name.downcase.match?(/\b#{Regexp.escape(exempted_item)}s?\b/)
       end
     end
